@@ -1,0 +1,197 @@
+/**
+ * Constantes
+ */
+@blue: #2D9AFA;
+@red: red;
+@green: #07B513;
+
+/**
+ * Funções
+ */
+.box-shadow(@params) {
+	-webkit-box-shadow: @params;
+	-moz-box-shadow: @params;
+	box-shadow: @params;
+}
+
+.duo-box-shadow(@param1, @param2) {
+	-webkit-box-shadow: @param1, @param2;
+	-moz-box-shadow: @param1, @param2;
+	box-shadow: @param1, @param2;
+}
+
+.tri-box-shadow(@param1, @param2, @param3) {
+	-webkit-box-shadow: @param1, @param2, @param3;
+	-moz-box-shadow: @param1, @param2, @param3;
+	box-shadow: @param1, @param2, @param3;
+}
+
+.border-radius(@params) {
+	-webkit-border-radius: @params;
+	-moz-border-radius: @params;
+	border-radius: @params;
+}
+
+.no-select {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/**
+ * Reset
+ */
+body {
+	margin: 0;
+	font-family: arial;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+h1, h2 {
+	.no-select;
+	cursor: default;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	margin: 15px 5px 25px;
+}
+
+:invalid:not(form) {
+	background-color: #FFE6E6;
+}
+
+/**
+ * Genéricos
+ */
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.label {
+	font-weight: bolder;
+	&:after {
+		content: ':';
+	}
+}
+
+.col {
+	display: flex;
+	& > * {
+		flex: 1 1 0px;
+	}
+}
+
+/**
+ * Componentes
+ */
+header {
+	display: inline-block;
+	height: 100px;
+	width: 100%;
+
+	.viavarejo {
+		background-image: url("../../resource/img/viavarejo.jpg");
+		height: 99px;
+		width: 165px;
+		background-size: 100%;
+		background-position: 50%;
+	}
+}
+
+button {
+	border: 0;
+	cursor: pointer;
+	.border-radius(5px);
+	padding: 5px 30px;
+
+	color: #fff;
+    font-size: 17px;
+	font-weight: bolder;
+    text-transform: capitalize;
+	font-family: 'Comic Sans MS';
+	text-shadow: -0.5px 0.5px 3px #333;
+
+	&:focus, &:active {
+		outline: none;
+	}
+
+	&.blue {
+		background-color: @blue;
+		.tri-box-shadow(
+			0 0 0 1px #222,
+			0 1px 0 (@blue + #111) inset,
+			0 -1px 0 rgba(51, 51, 51, 0.5) inset
+		);
+
+		&:active {
+			background-color: @blue - #222;
+			.duo-box-shadow(
+				0 0 0 1px #222,
+				0 1px 0 rgba(51, 51, 51, 0.5) inset
+			);
+		}
+	}
+
+	&.red {
+		background-color: @red;
+		.tri-box-shadow(
+			0 0 0 1px #222,
+			0 1px 0 (@red + #555) inset,
+			0 -1px 0 rgba(51, 51, 51, 0.5) inset
+		);
+
+		&:active {
+			background-color: @red - #333;
+			.duo-box-shadow(
+				0 0 0 1px #222,
+				0 1px 0 rgba(51, 51, 51, 0.5) inset
+			);
+		}
+	}
+}
+
+.field-wapper {
+	margin: 10px;
+	display: flex;
+
+	label {
+		flex: 0 0 150px;
+		display: inline-block;
+		cursor: default;
+		.no-select;
+		
+		&:after {
+			content: ":";
+		}
+	}
+
+	input + label:after {
+		content: "";		
+	}
+
+	input:not([type="radio"]):not([type="checkbox"]), select {
+		flex: 1 1 0px;
+		padding: 7px;
+		border: 1px solid #ccc;
+		.border-radius(3px);
+	}
+
+	input {
+		&[type="radio"], &[type="checkbox"] {
+			flex: 0 0 150px;
+			display: inline-block;
+		}
+	}
+}

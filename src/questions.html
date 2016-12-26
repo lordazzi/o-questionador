@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Quentionator</title>
+
+		<meta charset="utf-8" />
+
+		<link rel="less" href="app/css/questions.less" />
+		<link rel="stylesheet" href="resource/css/alertify.core.css" />
+		<link rel="stylesheet" href="resource/css/alertify.bootstrap.css" />
+
+		<script type="text/javascript" src="resource/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="resource/js/less.min.js"></script>
+		<script type="text/javascript" src="resource/js/mustache.min.js"></script>
+		<script type="text/javascript" src="resource/js/alertify.min.js"></script>
+		<script type="text/javascript" src="resource/js/vvar.prototype.js"></script>
+
+		<script type="text/javascript" src="app/control/general.js"></script>
+		<script type="text/javascript" src="app/control/questions.js"></script>
+		<template id="template-da-questao">
+			<div data-index="{{i}}" class="content">
+				<div class="col">
+					<span class="question-number">Questão {{n}}</span>
+					<h2>Orientação Objeto</h2>
+				</div>
+
+				<span class="question-enunciado">
+					{{{txtquestao}}}
+				</span>
+
+				<ol class="alternatives">
+					{{#alternatives}}
+						<li>
+							<input type="radio" name="question" value="{{idalternativa}}" />
+							<span>{{txtalternativa}}</span>
+						</li>
+					{{/alternatives}}
+				</ol>
+
+				<div class="button-bar">
+					<button class="red">Pular</button>
+					<button class="blue">Responder</button>
+				</div>
+			</div>
+		</template>
+	</head>
+	<body>
+		<header>
+			<div class="left viavarejo"></div>
+
+			<div class="right">
+				<h1 data-txtprova></h1>
+				
+				<div>
+					<span class="label">Avaliado</span>
+					<span data-txtavaliado class="value"></span>
+				</div>
+			</div>
+		</header>
+
+		<main role="main">
+			
+		</main>
+
+		<footer>
+			<nav class="questions">
+				<ul data-questions>
+				</ul>
+			</nav>
+			<span class="time-left">01:30</span>
+		</footer>
+	</body>
+</html>
+
+<!-- 1) Quanto tempo demorou na questão?
+2) Quanto de texto tem a questão?
+3) Quantas questões a pessoa chutou?
+4) Qual o tema da questão?
+5) Pulou a pergunta?
+6) Voltou para a pergunta para reler?
+7) Para cada vez que esta pergunta mudou de fase: vista, pulada, respondida; qual era o tempo que faltava para a prova.
+
+Cada tema deve ter um valor, cada tema pode ter mais peso que outro-->
+
+<!--
+linguistica e verbal
+Lógica / Matematica
+Teste espacial
+corporal motora
+musical
+interpessoal
+intrapessoal
+naturalista
+existencialista
+-->

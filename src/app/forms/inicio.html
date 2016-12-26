@@ -1,0 +1,68 @@
+<header>
+	<div class="left viavarejo"></div>
+
+	<div class="right">
+		<h1>The Questionator</h1>
+	</div>
+</header>
+
+<hr />
+
+<form id="beforestart" class="content" action="javascript:;">
+	<div class="field-wapper">
+		<label for="idprova">Prova</label>
+		<select id="idprova" name="idprova" required>
+		</select>
+	</div>
+
+	<div class="field-wapper">
+		<label for="txtavaliado">Avaliado</label>
+		<input id="txtavaliado" name="txtavaliado" required type="text" />
+	</div>
+
+	<div class="field-wapper">
+		<label for="txttempo">Tempo</label>
+		<input id="txttempo" name="txttempo" required placeholder="00:00" value="02:30" pattern="^\d{2}:\d{2}$\" type="text" />
+	</div>
+
+	<div class="field-wapper">
+		<label for="nrquestoes">Questões por tema</label>
+		<input id="nrquestoes" name="nrquestoes" required type="number" value="3" />
+	</div>
+
+	<div class="field-wapper">
+		<input id="ischute" name="ischute" checked type="checkbox" value="1" />
+		<label for="ischute" title="Para cada questão errada, menos um ponto na prova">Impedir chutes</label>
+	</div>
+
+	<div class="field-wapper">
+		<input id="nrtempo-sim" name="nrtempo" type="radio" value="1" />
+		<label for="nrtempo-sim" title="O tempo de horas é tratado como minutos, mas quando o tempo termina, a prova pede para que o recurso continue respondendo">Com tempo</label>
+	</div>
+
+	<div class="field-wapper">
+		<input id="nrtempo-nao" name="nrtempo" type="radio" value="2" />
+		<label for="nrtempo-nao" title="O tempo de horas é tratado como minutos, mas quando o tempo termina, a prova pede para que o recurso continue respondendo">Sem tempo</label>
+	</div>
+
+	<div class="field-wapper">
+		<input id="nrtempo-terror" name="nrtempo" checked type="radio" value="3" />
+		<label for="nrtempo-terror" title="O tempo de horas é tratado como minutos, mas quando o tempo termina, a prova pede para que o recurso continue respondendo">Aterrorizar</label>
+	</div>
+
+	<div class="field-wapper">
+		<label for="txtsenha">Senha</label>
+		<input id="txtsenha" name="txtsenha" required type="password" />
+	</div>
+
+	<div class="field-wapper">
+		<label for="txtconfirma">Confirmar</label>
+		<input id="txtconfirma" name="txtconfirma" required type="password" />
+	</div>
+</form>
+
+<hr />
+
+<footer>
+	<button form="beforestart" type="submit" class="blue">Iniciar</button>
+</footer>
