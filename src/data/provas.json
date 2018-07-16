@@ -1,0 +1,16 @@
+[
+	{
+		"idprova": 1,
+		"txtprova": "JavaScript"
+	},
+
+	{
+		"idprova": 2,
+		"txtprova": "Java"
+	},
+
+	{
+		"idprova": 3,
+		"txtprova": "Cobol"
+	}
+]
